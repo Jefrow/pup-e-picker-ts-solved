@@ -3,6 +3,6 @@ export type Dog = {
   name: string, 
   image: string, 
   description: string, 
-  isFavorited: boolean,
+  isFavorite: boolean,
   id: number, 
 }

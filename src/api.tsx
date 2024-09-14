@@ -2,7 +2,7 @@ export const baseUrl = "http://localhost:3000";
 
 export const Requests = {
   // should return a promise with all dogs in the database
-  getAllDogs: () => {},
+  getAllDogs: () => fetch(`${baseUrl}/dogs`).then((res) => res.json()),
   // should create a dog in the database from a partial dog object
   // and return a promise with the result
   postDog: () => {},
