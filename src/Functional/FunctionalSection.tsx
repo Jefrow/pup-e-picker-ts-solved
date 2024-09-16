@@ -6,9 +6,15 @@ import { Link } from "react-router-dom";
 export const FunctionalSection = ({
   children,
   setActiveTab,
+  favorite, 
+  unfavorite,
+  activeTab, 
 }: {
   setActiveTab: (setActiveTab: string) => void;
   children: ReactNode;
+  favorite: number;
+  unfavorite: number;
+  activeTab: string;  
 }) => {
   return (
     <section id="main-section">
@@ -20,25 +26,25 @@ export const FunctionalSection = ({
         <div className="selectors">
           {/* This should display the favorited count */}
           <div
-            className={`selector active`}
+            className={`selector ${activeTab === 'favorited' ? 'active' : '' }`}
             onClick={() => {
               setActiveTab("favorited");
             }}
           >
-            favorited ( 12 )
+            favorited ( {favorite} )
           </div>
 
           {/* This should display the unfavorited count */}
           <div
-            className={`selector`}
+            className={`selector ${activeTab === 'unfavorited' ? 'active' : ''}`}
             onClick={() => {
               setActiveTab("unfavorited");
             }}
           >
-            unfavorited ( 25 )
+            unfavorited ( {unfavorite} )
           </div>
           <div
-            className={`selector`}
+            className={`selector ${activeTab === 'create' ? 'active' : ''}`}
             onClick={() => {
               setActiveTab("create");
             }}
