@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { DogCard } from "../Shared/DogCard";
 // import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
@@ -6,15 +7,16 @@ import { Dog } from "../types";
 export const FunctionalDogs = ({
    allDogs, 
    filter,
-   deleteDog,
    isLoading,
+   deleteDog,
  }: {
    allDogs: Dog[];
    filter: string; 
-   deleteDog:(dog: Dog) => void; 
    isLoading: boolean;
+   deleteDog:(dog: Dog) => void; 
   }
 ) => {
+
   const filteredDogs = allDogs.filter((dog) =>{
     if(filter === "favorited"){
       return dog.isFavorite
@@ -42,7 +44,7 @@ export const FunctionalDogs = ({
             deleteDog(dog)
           }}
           onHeartClick={() => {
-            alert("clicked heart");
+            alert("clicked heart")
           }}
           onEmptyHeartClick={() => {
             alert("clicked empty heart");

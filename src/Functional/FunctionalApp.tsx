@@ -57,9 +57,16 @@ export function FunctionalApp() {
       .finally(() => setIsLoading(false));
   };
 
+  const updateDog = (dog: Dog) => {
+    setIsLoading(true);
+    Requests.updateDog(dog)
+      .then(() => refetchData())
+      .finally(() => setIsLoading(false));
+  };
+
   //filter the favorited vs the unfavorited dogs.
   const favorited = allDogs.filter((dog) => dog.isFavorite).length;
-  const unFavorited = allDogs.length - favorited
+  const unFavorited = allDogs.length - favorited;
 
   return (
     <div className="App" style={{ backgroundColor: "skyblue" }}>
@@ -81,8 +88,8 @@ export function FunctionalApp() {
           <FunctionalDogs
             allDogs={allDogs}
             filter={activeTab}
-            deleteDog={deleteDog}
             isLoading={isLoading}
+            deleteDog={deleteDog}
           />
         )}
       </FunctionalSection>

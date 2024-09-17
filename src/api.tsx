@@ -23,7 +23,15 @@ export const Requests = {
     }).then((res) => res.json())
   ),
 
-  updateDog: () => {},
+  updateDog: (dog:Dog) => (
+    fetch(`${baseUrl}/dogs/${dog.id}`, {
+      body:JSON.stringify(dog.isFavorite),
+      method: "PATCH", 
+      headers: {
+        "Content-Type" : "application/json"
+      }
+    }).then((response) => response.json())
+  ),
 
   // Just a dummy function for use in the playground
   dummyFunction: () => {
