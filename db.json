@@ -139,6 +139,44 @@
       "description": "loosely at bossy surprisingly friendly for well-lit seldom",
       "isFavorite": false,
       "id": 19
+    },
+    {
+      "name": "Lucy",
+      "image": "/assets/dalmation.png",
+      "description": "Cute forever puppy",
+      "isFavorite": false,
+      "id": 20
+    },
+    {
+      "name": "chewy",
+      "image": "/assets/chihuahua.avif",
+      "description": "Small yet feisty. He loves to sleep all day!!",
+      "isFavorite": false,
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "name": "Bluey",
+      "image": "",
+      "description": "blue dog with a black spots ",
+      "isFavorite": false,
+      "id": 23
+    },
+    {
+      "name": "Nala",
+      "image": "/assets/boxer.jpeg",
+      "description": "cute tiny doggo ",
+      "isFavorite": false,
+      "id": 24
+    },
+    {
+      "name": "bluey ",
+      "image": "/assets/blue-heeler.png",
+      "description": "cute australian heeler. ",
+      "isFavorite": false,
+      "id": 25
     }
   ]
 }
