@@ -8,11 +8,16 @@ import { Requests } from "../api";
 //Everything will live up here, from the fectch calls to the functions.
 //Fetch calls should exist here.
 /*
-  ToDo: Be able to delete a dog card (Delete Request). 
-  ToDo: Be able to favorite and unfavorite a dog. (Patch Request). 
-  ToDo: Be able to create the dogs in the functionalCreateDogForm. (Post Request).
-  ToDo: Refactor when everything is working so It follows SRP and Dry, pass 
+  ✔️ToDo: Be able to delete a dog card (Delete Request). 
+  Files that need to be refactored: 
+  -FunctionalApp.tsx
+  -FunctionalDogs.tsx
+  -api.tsx
 
+  ToDo: Be able to favorite and unfavorite a dog. (Patch Request). 
+  ✔️ToDo: Refactor when everything is working so It follows SRP and Dry
+  
+  ✔️ ToDo: Be able to create the dogs in the functionalCreateDogForm. (Post Request).
   Files that need to be refactored: 
   -FunctionalApp.tsx
   -FunctionalCreateDogForm.tsx
@@ -25,28 +30,36 @@ export function FunctionalApp() {
   const [isLoading, setIsLoading] = useState(false);
 
   const refetchData = () => {
-    setIsLoading(true) 
-    return Requests.getAllDogs().then((dog) => {
-      setAllDogs(dog);
-    }).finally(() => setIsLoading(false));
+    setIsLoading(true);
+    return Requests.getAllDogs()
+      .then((dog) => {
+        setAllDogs(dog);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
     refetchData();
   }, []);
 
-  //Create dog function that will passed down to the Functional dog form. 
+  //Create dog function that will passed down to the Functional dog form.
   const createDog = (dog: Omit<Dog, "id">) => {
-    setIsLoading(true)
-    Requests.postDog(dog).then(() => refetchData()).finally(() => setIsLoading(false)); 
-  }
+    setIsLoading(true);
+    Requests.postDog(dog)
+      .then(() => refetchData())
+      .finally(() => setIsLoading(false));
+  };
+
+  const deleteDog = (dog: Dog) => {
+    setIsLoading(true);
+    Requests.deleteDog(dog)
+      .then(() => refetchData())
+      .finally(() => setIsLoading(false));
+  };
 
   //filter the favorited vs the unfavorited dogs.
-  const favorited = allDogs.filter((dog) => dog.isFavorite).map((dog) => dog);
-  const unFavorited = allDogs
-    .filter((dog) => !dog.isFavorite)
-    .map((dog) => dog);
-
+  const favorited = allDogs.filter((dog) => dog.isFavorite).length;
+  const unFavorited = allDogs.length - favorited
 
   return (
     <div className="App" style={{ backgroundColor: "skyblue" }}>
@@ -55,18 +68,23 @@ export function FunctionalApp() {
       </header>
       <FunctionalSection
         setActiveTab={setActiveTab}
-        favorite={favorited.length}
-        unfavorite={unFavorited.length}
+        favorite={favorited}
+        unfavorite={unFavorited}
         activeTab={activeTab}
       >
-
-        {/*Refacotr later that that I wouldn't need to repeat the <FunctionalDogs/> */}
-        {activeTab === "all" && <FunctionalDogs allDogs={allDogs} />}
-        {activeTab === "favorited" && <FunctionalDogs allDogs={favorited} />}
-        {activeTab === "unfavorited" && (
-          <FunctionalDogs allDogs={unFavorited} />
+        {activeTab === "create" ? (
+          <FunctionalCreateDogForm
+            createDog={createDog}
+            isLoading={isLoading}
+          />
+        ) : (
+          <FunctionalDogs
+            allDogs={allDogs}
+            filter={activeTab}
+            deleteDog={deleteDog}
+            isLoading={isLoading}
+          />
         )}
-        {activeTab === "create" && <FunctionalCreateDogForm createDog={createDog} isLoading={isLoading}/>}
       </FunctionalSection>
     </div>
   );

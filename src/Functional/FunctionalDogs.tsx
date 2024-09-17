@@ -1,16 +1,35 @@
 import { DogCard } from "../Shared/DogCard";
 // import { dogPictures } from "../dog-pictures";
-import { Dog } from '../types'
+import { Dog } from "../types";
 
 // Right now these dogs are constant, but in reality we should be getting these from our server
-export const FunctionalDogs = ({allDogs} : {allDogs: Dog[]}) => {
+export const FunctionalDogs = ({
+   allDogs, 
+   filter,
+   deleteDog,
+   isLoading,
+ }: {
+   allDogs: Dog[];
+   filter: string; 
+   deleteDog:(dog: Dog) => void; 
+   isLoading: boolean;
+  }
+) => {
+  const filteredDogs = allDogs.filter((dog) =>{
+    if(filter === "favorited"){
+      return dog.isFavorite
+    }else if(filter === "unfavorited"){
+      return !dog.isFavorite
+    }else{
+      return dog
+    }   
+  })
   return (
     //  the "<> </>"" are called react fragments, it's like adding all the html inside
     // without adding an actual html element
     <>
-      {
-        allDogs.map((dog) => (
-          <DogCard
+      {filteredDogs.map((dog) => (
+        <DogCard
           dog={{
             id: dog.id,
             image: dog.image,
@@ -20,7 +39,7 @@ export const FunctionalDogs = ({allDogs} : {allDogs: Dog[]}) => {
           }}
           key={dog.id}
           onTrashIconClick={() => {
-            alert("clicked trash");
+            deleteDog(dog)
           }}
           onHeartClick={() => {
             alert("clicked heart");
@@ -28,10 +47,9 @@ export const FunctionalDogs = ({allDogs} : {allDogs: Dog[]}) => {
           onEmptyHeartClick={() => {
             alert("clicked empty heart");
           }}
-          isLoading={false}
+          isLoading={isLoading}
         />
-        ))
-      }
+      ))}
     </>
   );
 };
