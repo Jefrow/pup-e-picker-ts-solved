@@ -9,19 +9,9 @@ import { Requests } from "../api";
 //Fetch calls should exist here.
 /*
   ✔️ToDo: Be able to delete a dog card (Delete Request). 
-  Files that need to be refactored: 
-  -FunctionalApp.tsx
-  -FunctionalDogs.tsx
-  -api.tsx
-
-  ToDo: Be able to favorite and unfavorite a dog. (Patch Request). 
+  ✔️ToDo: Be able to favorite and unfavorite a dog. (Patch Request). 
   ✔️ToDo: Refactor when everything is working so It follows SRP and Dry
-  
-  ✔️ ToDo: Be able to create the dogs in the functionalCreateDogForm. (Post Request).
-  Files that need to be refactored: 
-  -FunctionalApp.tsx
-  -FunctionalCreateDogForm.tsx
-  -api.tsx
+  ✔️ToDo: Be able to create the dogs in the functionalCreateDogForm. (Post Request).
 */
 
 export function FunctionalApp() {
@@ -57,7 +47,7 @@ export function FunctionalApp() {
       .finally(() => setIsLoading(false));
   };
 
-  const updateDog = (dog: Dog) => {
+  const updateDog = (dog: Pick<Dog, "id" | "isFavorite">) => {
     setIsLoading(true);
     Requests.updateDog(dog)
       .then(() => refetchData())
@@ -90,6 +80,7 @@ export function FunctionalApp() {
             filter={activeTab}
             isLoading={isLoading}
             deleteDog={deleteDog}
+            updateDog={updateDog}
           />
         )}
       </FunctionalSection>

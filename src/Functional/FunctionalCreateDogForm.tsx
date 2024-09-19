@@ -4,11 +4,6 @@ import { Dog } from "../types";
 
 // use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
-
-/*
-Figure out how the Image label works. only the syntax will work. "/assets/cowardly.png" 
-*/
-
 export const FunctionalCreateDogForm = ({
   createDog,
   isLoading,
@@ -19,6 +14,9 @@ export const FunctionalCreateDogForm = ({
   const [nameInput, setNameInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [imageInput, setImageInput] = useState(defaultSelectedImage);
+  const validName = (nameInput.length > 3); 
+  const validDescrtiption = (descriptionInput.length > 3); 
+  const validInput = (validName && validDescrtiption);  
 
   return (
     <form
@@ -32,7 +30,7 @@ export const FunctionalCreateDogForm = ({
           description: descriptionInput,
           isFavorite: false,
         })
-        setNameInput(""), setDescriptionInput(""), setImageInput("");
+        setNameInput(""), setDescriptionInput(""), setImageInput(defaultSelectedImage);
       }}
     >
       <h4>Create a New Dog</h4>
@@ -71,7 +69,7 @@ export const FunctionalCreateDogForm = ({
           );
         })}
       </select>
-      <input type="submit" disabled={isLoading} />
+      <input type="submit" disabled={isLoading || !validInput} />
     </form>
   );
 };
