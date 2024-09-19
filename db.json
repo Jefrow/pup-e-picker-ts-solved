@@ -4,77 +4,49 @@
       "name": "Nannie",
       "image": "/assets/corgi.png",
       "description": "inquisitively oof calm acupuncture whereas equatorial gosh effectuate",
-      "isFavorite": true,
-      "id": 0
-    },
-    {
-      "name": "Brycen",
-      "image": "/assets/chihuahua.avif",
-      "description": "bottleful after baste obliterate putrid",
       "isFavorite": false,
-      "id": 1
+      "id": 0
     },
     {
       "name": "Thurman",
       "image": "/assets/boxer.png",
       "description": "subtle though jade indeed before island aha",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 2
     },
     {
       "name": "Orrin",
       "image": "/assets/chihuahua.avif",
       "description": "provided after despite till watcher",
-      "isFavorite": true,
-      "id": 3
-    },
-    {
-      "name": "Lucie",
-      "image": "/assets/dalmation.png",
-      "description": "psst justly browsing all solid",
       "isFavorite": false,
-      "id": 4
+      "id": 3
     },
     {
       "name": "Luella",
       "image": "/assets/blue-heeler.png",
       "description": "smoothly idolized naturally yum that till phew",
-      "isFavorite": false,
-      "id": 5
-    },
-    {
-      "name": "Shannon",
-      "image": "/assets/cowardly.png",
-      "description": "invite insistent brr truthfully athwart bah straddle assassination",
       "isFavorite": true,
-      "id": 6
+      "id": 5
     },
     {
       "name": "Imani",
       "image": "/assets/dalmation.png",
       "description": "rattle excluding skean on recovery",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 7
-    },
-    {
-      "name": "Danyka",
-      "image": "/assets/chihuahua.avif",
-      "description": "chillax daily sally however lest",
-      "isFavorite": true,
-      "id": 8
     },
     {
       "name": "Toby",
       "image": "/assets/blue-heeler.png",
       "description": "wildly forenenst rightfully till how",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 9
     },
     {
       "name": "Tyson",
       "image": "/assets/blue-heeler.png",
       "description": "inequality maroon however nimble segregate",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 10
     },
     {
@@ -95,7 +67,7 @@
       "name": "Cooper",
       "image": "/assets/dalmation.png",
       "description": "furthermore when righteously when handlebar breathe considering so",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 13
     },
     {
@@ -109,36 +81,29 @@
       "name": "Linda",
       "image": "/assets/blue-heeler.png",
       "description": "instead angelic kissingly easily apropos tempting crease",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 15
     },
     {
-      "name": "Dakota",
-      "image": "/assets/chihuahua.avif",
-      "description": "salad hopelessly loyally gah whoever",
-      "isFavorite": true,
-      "id": 16
-    },
-    {
-      "name": "Stewart",
+      "name": "Jethro ",
       "image": "/assets/blue-heeler.png",
-      "description": "bad whoever obedient modulo investigation daily yum",
-      "isFavorite": true,
-      "id": 17
+      "description": "Mangey mutt who loves to eat all day!",
+      "isFavorite": false,
+      "id": 20
     },
     {
-      "name": "Korey",
-      "image": "/assets/chihuahua.avif",
-      "description": "loosely at bossy surprisingly friendly for well-lit seldom",
+      "name": "Maggie ",
+      "image": "/assets/boxer.jpeg",
+      "description": "Energetic pup that loves to run",
       "isFavorite": false,
-      "id": 19
+      "id": 21
     },
     {
       "name": "Maggie",
-      "image": "/assets/dalmation.png",
-      "description": "A ball of energy that never rest. ",
+      "image": "/assets/blue-heeler.png",
+      "description": "Cute tiny dog with a big heart. ",
       "isFavorite": false,
-      "id": 20
+      "id": 22
     }
   ]
 }

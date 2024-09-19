@@ -23,9 +23,9 @@ export const Requests = {
     }).then((res) => res.json())
   ),
 
-  updateDog: (dog:Dog) => (
+  updateDog: (dog: Pick<Dog,"id" | "isFavorite">) => (
     fetch(`${baseUrl}/dogs/${dog.id}`, {
-      body:JSON.stringify(dog.isFavorite),
+      body:JSON.stringify(dog),
       method: "PATCH", 
       headers: {
         "Content-Type" : "application/json"
