@@ -1,53 +1,11 @@
 {
   "dogs": [
     {
-      "name": "Nannie",
-      "image": "/assets/corgi.png",
-      "description": "inquisitively oof calm acupuncture whereas equatorial gosh effectuate",
-      "isFavorite": false,
-      "id": 0
-    },
-    {
-      "name": "Thurman",
-      "image": "/assets/boxer.png",
-      "description": "subtle though jade indeed before island aha",
-      "isFavorite": false,
-      "id": 2
-    },
-    {
-      "name": "Orrin",
-      "image": "/assets/chihuahua.avif",
-      "description": "provided after despite till watcher",
-      "isFavorite": false,
-      "id": 3
-    },
-    {
-      "name": "Luella",
-      "image": "/assets/blue-heeler.png",
-      "description": "smoothly idolized naturally yum that till phew",
-      "isFavorite": true,
-      "id": 5
-    },
-    {
-      "name": "Imani",
-      "image": "/assets/dalmation.png",
-      "description": "rattle excluding skean on recovery",
-      "isFavorite": false,
-      "id": 7
-    },
-    {
       "name": "Toby",
       "image": "/assets/blue-heeler.png",
       "description": "wildly forenenst rightfully till how",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 9
-    },
-    {
-      "name": "Tyson",
-      "image": "/assets/blue-heeler.png",
-      "description": "inequality maroon however nimble segregate",
-      "isFavorite": true,
-      "id": 10
     },
     {
       "name": "Eulalia",
@@ -60,7 +18,7 @@
       "name": "Lawson",
       "image": "/assets/cowardly.png",
       "description": "uniform but wet cruelly knowledgeable",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 12
     },
     {
@@ -81,7 +39,7 @@
       "name": "Linda",
       "image": "/assets/blue-heeler.png",
       "description": "instead angelic kissingly easily apropos tempting crease",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 15
     },
     {
@@ -95,7 +53,7 @@
       "name": "Maggie ",
       "image": "/assets/boxer.jpeg",
       "description": "Energetic pup that loves to run",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 21
     },
     {
@@ -104,6 +62,27 @@
       "description": "Cute tiny dog with a big heart. ",
       "isFavorite": false,
       "id": 22
+    },
+    {
+      "name": "Maggie",
+      "description": "Rascal dog.",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 23
+    },
+    {
+      "name": "Luna ",
+      "description": "Small ball of energy.",
+      "image": "/assets/chihuahua.avif",
+      "isFavorite": true,
+      "id": 24
+    },
+    {
+      "name": "Isla",
+      "description": "This dog is a good doggo",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": true,
+      "id": 25
     }
   ]
 }
