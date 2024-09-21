@@ -64,7 +64,7 @@ export function FunctionalApp() {
         <h1>pup-e-picker (Functional)</h1>
       </header>
       <FunctionalSection
-        setActiveTab={setActiveTab}
+        setActiveTab={(tab) => setActiveTab(tab)}
         favorite={favorited}
         unfavorite={unFavorited}
         activeTab={activeTab}

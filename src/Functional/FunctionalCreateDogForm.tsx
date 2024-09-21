@@ -14,9 +14,9 @@ export const FunctionalCreateDogForm = ({
   const [nameInput, setNameInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [imageInput, setImageInput] = useState(defaultSelectedImage);
-  const validName = (nameInput.length > 3); 
-  const validDescrtiption = (descriptionInput.length > 3); 
-  const validInput = (validName && validDescrtiption);  
+  const isValidName = (nameInput.length > 3); 
+  const isValidDescrtiption = (descriptionInput.length > 3); 
+  const isValidDog = (isValidName && isValidDescrtiption);  
 
   return (
     <form
@@ -69,7 +69,7 @@ export const FunctionalCreateDogForm = ({
           );
         })}
       </select>
-      <input type="submit" disabled={isLoading || !validInput} />
+      <input type="submit" disabled={isLoading || !isValidDog} />
     </form>
   );
 };

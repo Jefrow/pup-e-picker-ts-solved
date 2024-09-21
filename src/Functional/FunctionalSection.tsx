@@ -10,7 +10,7 @@ export const FunctionalSection = ({
   unfavorite,
   activeTab, 
 }: {
-  setActiveTab: (setActiveTab: string) => void;
+  setActiveTab: (tab: string) => void;
   children: ReactNode;
   favorite: number;
   unfavorite: number;
