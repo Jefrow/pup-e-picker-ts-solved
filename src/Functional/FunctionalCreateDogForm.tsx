@@ -15,8 +15,8 @@ export const FunctionalCreateDogForm = ({
   const [descriptionInput, setDescriptionInput] = useState("");
   const [imageInput, setImageInput] = useState(defaultSelectedImage);
   const isValidName = (nameInput.length > 3); 
-  const isValidDescrtiption = (descriptionInput.length > 3); 
-  const isValidDog = (isValidName && isValidDescrtiption);  
+  const isValidDescription = (descriptionInput.length > 3); 
+  const isValidDog = (isValidName && isValidDescription);  
 
   return (
     <form

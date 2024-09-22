@@ -21,8 +21,8 @@ export class ClassCreateDogForm extends Component<Props, State> {
   };
 
   isValidName = () => (this.state.nameInput.length > 3); 
-  isValidDescrtiption = () => (this.state.descriptionInput.length > 3); 
-  isValidDog = () => (this.isValidName() && this.isValidDescrtiption());
+  isValidDescription = () => (this.state.descriptionInput.length > 3); 
+  isValidDog = () => (this.isValidName() && this.isValidDescription());
 
   render() {
     const { isLoading, createDog } = this.props;
