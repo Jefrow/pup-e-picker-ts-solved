@@ -1,29 +1,32 @@
-import { DogCard } from "../Shared/DogCard";
-import { Component } from "react";
-import { Dog } from "../types";
+import { DogCard } from '../Shared/DogCard';
+import { Component } from 'react';
+import { Dog } from '../types';
 
 type Props = {
   allDogs: Dog[];
   filter: string;
   isLoading: boolean;
   deleteDog: (dog: Dog) => void;
-  updateDog: (dog: Pick<Dog, "id" | "isFavorite">) => void;
+  updateDog: (dog: Pick<Dog, 'id' | 'isFavorite'>) => void;
 };
 
 // Right now these dogs are constant, but in reality we should be getting these from our server
 export class ClassDogs extends Component<Props> {
-  render() {
-    const { allDogs, filter, isLoading, deleteDog, updateDog } = this.props;
-
-    const filteredDogs = allDogs.filter((dog: Dog) => {
-      if (filter === "favorited") {
+  filterDogs = (allDogs: Dog[], filter: string) => {
+    return allDogs.filter((dog: Dog) => {
+      if (filter === 'favorited') {
         return dog.isFavorite;
-      } else if (filter === "unfavorited") {
+      } else if (filter === 'unfavorited') {
         return !dog.isFavorite;
       } else {
         return dog;
       }
     });
+  };
+
+  render() {
+    const { allDogs, filter, isLoading, deleteDog, updateDog } = this.props;
+    const filteredDogs = this.filterDogs(allDogs, filter);
 
     return (
       <>
