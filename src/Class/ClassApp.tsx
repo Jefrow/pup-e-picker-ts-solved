@@ -1,9 +1,10 @@
-import { Component } from "react";
-import { ClassSection } from "./ClassSection";
-import { ClassDogs } from "./ClassDogs";
-import { ClassCreateDogForm } from "./ClassCreateDogForm";
-import { Dog } from "../types";
-import { Requests } from "../api";
+import { Component } from 'react';
+import { ClassSection } from './ClassSection';
+import { ClassDogs } from './ClassDogs';
+import { ClassCreateDogForm } from './ClassCreateDogForm';
+import { Dog } from '../types';
+import { Requests } from '../api';
+import { toast } from 'react-hot-toast';
 
 type State = {
   allDogs: Dog[] | [];
@@ -13,7 +14,7 @@ type State = {
 export class ClassApp extends Component<State> {
   state: State = {
     allDogs: [],
-    activeTab: "all",
+    activeTab: 'all',
     isLoading: false,
   };
 
@@ -30,10 +31,13 @@ export class ClassApp extends Component<State> {
     this.refetchData();
   }
 
-  createDog = (dog: Omit<Dog, "id">) => {
+  createDog = (dog: Omit<Dog, 'id'>) => {
     this.setState({ isLoadig: true });
     Requests.postDog(dog)
       .then(() => this.refetchData())
+      .then(() => {
+        toast.success('You have created a dog!');
+      })
       .finally(() => this.setState({ isLoading: false }));
   };
 
@@ -41,13 +45,21 @@ export class ClassApp extends Component<State> {
     this.setState({ isLoading: true });
     Requests.deleteDog(dog)
       .then(() => this.refetchData())
+      .then(() => {
+        toast.success('You have deleted a dog!');
+      })
       .finally(() => this.setState({ isLoading: false }));
   };
 
-  updateDog = (dog: Pick<Dog, "id" | "isFavorite">) => {
+  updateDog = (dog: Pick<Dog, 'id' | 'isFavorite'>) => {
     this.setState({ isLoading: true });
     Requests.updateDog(dog)
       .then(() => this.refetchData())
+      .then(() => {
+        dog.isFavorite
+          ? toast.success('You have liked a dog')
+          : toast.success('You have unliked a dog');
+      })
       .finally(() => this.setState({ isLoading: false }));
   };
 
@@ -57,7 +69,7 @@ export class ClassApp extends Component<State> {
     const unfavorited = allDogs.length - favorited;
 
     return (
-      <div className="App" style={{ backgroundColor: "goldenrod" }}>
+      <div className="App" style={{ backgroundColor: 'goldenrod' }}>
         <header>
           <h1>pup-e-picker (Class Version)</h1>
         </header>
@@ -67,13 +79,13 @@ export class ClassApp extends Component<State> {
           unfavorited={unfavorited}
           activeTab={activeTab}
         >
-          {activeTab === "create" ? (
+          {activeTab === 'create' ? (
             <ClassCreateDogForm
               createDog={this.createDog}
               isLoading={isLoading}
             />
           ) : (
-            <ClassDogs 
+            <ClassDogs
               allDogs={allDogs}
               filter={activeTab}
               isLoading={isLoading}

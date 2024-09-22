@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import { FunctionalCreateDogForm } from "./FunctionalCreateDogForm";
-import { FunctionalDogs } from "./FunctionalDogs";
-import { FunctionalSection } from "./FunctionalSection";
-import { Dog } from "../types";
-import { Requests } from "../api";
+import { useEffect, useState } from 'react';
+import { FunctionalCreateDogForm } from './FunctionalCreateDogForm';
+import { FunctionalDogs } from './FunctionalDogs';
+import { FunctionalSection } from './FunctionalSection';
+import { Dog } from '../types';
+import { Requests } from '../api';
+import { toast } from 'react-hot-toast';
 
 //Everything will live up here, from the fectch calls to the functions.
 //Fetch calls should exist here.
@@ -16,7 +17,7 @@ import { Requests } from "../api";
 
 export function FunctionalApp() {
   const [allDogs, setAllDogs] = useState<Dog[]>([]);
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
 
   const refetchData = () => {
@@ -33,10 +34,13 @@ export function FunctionalApp() {
   }, []);
 
   //Create dog function that will passed down to the Functional dog form.
-  const createDog = (dog: Omit<Dog, "id">) => {
+  const createDog = (dog: Omit<Dog, 'id'>) => {
     setIsLoading(true);
     Requests.postDog(dog)
       .then(() => refetchData())
+      .then(() => {
+        toast.success('You have created a dog!');
+      })
       .finally(() => setIsLoading(false));
   };
 
@@ -44,13 +48,21 @@ export function FunctionalApp() {
     setIsLoading(true);
     Requests.deleteDog(dog)
       .then(() => refetchData())
+      .then(() => {
+        toast.success('You have deleted a dog!');
+      })
       .finally(() => setIsLoading(false));
   };
 
-  const updateDog = (dog: Pick<Dog, "id" | "isFavorite">) => {
+  const updateDog = (dog: Pick<Dog, 'id' | 'isFavorite'>) => {
     setIsLoading(true);
     Requests.updateDog(dog)
       .then(() => refetchData())
+      .then(() => {
+        dog.isFavorite
+          ? toast.success('You have liked a dog')
+          : toast.success('You have unliked a dog');
+      })
       .finally(() => setIsLoading(false));
   };
 
@@ -59,7 +71,7 @@ export function FunctionalApp() {
   const unFavorited = allDogs.length - favorited;
 
   return (
-    <div className="App" style={{ backgroundColor: "skyblue" }}>
+    <div className="App" style={{ backgroundColor: 'skyblue' }}>
       <header>
         <h1>pup-e-picker (Functional)</h1>
       </header>
@@ -69,7 +81,7 @@ export function FunctionalApp() {
         unfavorite={unFavorited}
         activeTab={activeTab}
       >
-        {activeTab === "create" ? (
+        {activeTab === 'create' ? (
           <FunctionalCreateDogForm
             createDog={createDog}
             isLoading={isLoading}

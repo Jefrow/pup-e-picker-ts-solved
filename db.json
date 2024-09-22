@@ -1,73 +1,10 @@
 {
   "dogs": [
     {
-      "name": "Toby",
-      "image": "/assets/blue-heeler.png",
-      "description": "wildly forenenst rightfully till how",
-      "isFavorite": false,
-      "id": 9
-    },
-    {
-      "name": "Eulalia",
-      "image": "/assets/boxer.png",
-      "description": "foolish rarely despite fooey frantically definitive jubilant dislike",
-      "isFavorite": true,
-      "id": 11
-    },
-    {
-      "name": "Lawson",
-      "image": "/assets/cowardly.png",
-      "description": "uniform but wet cruelly knowledgeable",
-      "isFavorite": false,
-      "id": 12
-    },
-    {
-      "name": "Cooper",
-      "image": "/assets/dalmation.png",
-      "description": "furthermore when righteously when handlebar breathe considering so",
-      "isFavorite": true,
-      "id": 13
-    },
-    {
-      "name": "Melody",
-      "image": "/assets/chihuahua.avif",
-      "description": "demotivate above hmph exploit hatbox quaver these",
-      "isFavorite": false,
-      "id": 14
-    },
-    {
-      "name": "Linda",
-      "image": "/assets/blue-heeler.png",
-      "description": "instead angelic kissingly easily apropos tempting crease",
-      "isFavorite": true,
-      "id": 15
-    },
-    {
-      "name": "Jethro ",
-      "image": "/assets/blue-heeler.png",
-      "description": "Mangey mutt who loves to eat all day!",
-      "isFavorite": false,
-      "id": 20
-    },
-    {
-      "name": "Maggie ",
-      "image": "/assets/boxer.jpeg",
-      "description": "Energetic pup that loves to run",
-      "isFavorite": true,
-      "id": 21
-    },
-    {
-      "name": "Maggie",
-      "image": "/assets/blue-heeler.png",
-      "description": "Cute tiny dog with a big heart. ",
-      "isFavorite": false,
-      "id": 22
-    },
-    {
       "name": "Maggie",
       "description": "Rascal dog.",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 23
     },
     {
@@ -81,8 +18,15 @@
       "name": "Isla",
       "description": "This dog is a good doggo",
       "image": "/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 25
+    },
+    {
+      "name": "Lily",
+      "image": "/assets/blue-heeler.png",
+      "description": "Cute feisty puppy",
+      "isFavorite": false,
+      "id": 26
     }
   ]
 }
