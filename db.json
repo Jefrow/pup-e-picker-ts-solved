@@ -25,8 +25,29 @@
       "name": "Lily",
       "image": "/assets/blue-heeler.png",
       "description": "Cute feisty puppy",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 26
+    },
+    {
+      "name": "Luca ",
+      "description": "Short stubby puppy ",
+      "image": "/assets/corgi.png",
+      "isFavorite": false,
+      "id": 27
+    },
+    {
+      "name": "Isla",
+      "description": "Cutie Patootie",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": false,
+      "id": 28
+    },
+    {
+      "name": "Maggie",
+      "description": "Ball of energy",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 29
     }
   ]
 }

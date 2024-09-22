@@ -29,41 +29,32 @@ export function FunctionalApp() {
       .finally(() => setIsLoading(false));
   };
 
+  const handleRequest = (request: Promise<any>, successMessage: string) => {
+    setIsLoading(true);
+    return request
+      .then(() => refetchData())
+      .then(() => toast.success(successMessage))
+      .finally(() => setIsLoading(false));
+  };
+
   useEffect(() => {
     refetchData();
   }, []);
 
   //Create dog function that will passed down to the Functional dog form.
   const createDog = (dog: Omit<Dog, 'id'>) => {
-    setIsLoading(true);
-    Requests.postDog(dog)
-      .then(() => refetchData())
-      .then(() => {
-        toast.success('You have created a dog!');
-      })
-      .finally(() => setIsLoading(false));
+    handleRequest(Requests.postDog(dog), 'You have created a dog!');
   };
 
   const deleteDog = (dog: Dog) => {
-    setIsLoading(true);
-    Requests.deleteDog(dog)
-      .then(() => refetchData())
-      .then(() => {
-        toast.success('You have deleted a dog!');
-      })
-      .finally(() => setIsLoading(false));
+    handleRequest(Requests.deleteDog(dog), 'You have deleted a dog!');
   };
 
   const updateDog = (dog: Pick<Dog, 'id' | 'isFavorite'>) => {
-    setIsLoading(true);
-    Requests.updateDog(dog)
-      .then(() => refetchData())
-      .then(() => {
-        dog.isFavorite
-          ? toast.success('You have liked a dog')
-          : toast.success('You have unliked a dog');
-      })
-      .finally(() => setIsLoading(false));
+    handleRequest(
+      Requests.updateDog(dog),
+      dog.isFavorite ? 'You have liked a dog' : 'You have un-liked a dog'
+    );
   };
 
   //filter the favorited vs the unfavorited dogs.

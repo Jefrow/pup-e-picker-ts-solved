@@ -27,40 +27,31 @@ export class ClassApp extends Component<State> {
       .finally(() => this.setState({ isLoading: false }));
   };
 
+  handleRequest = (request: Promise<any>, successMessage: string) => {
+    this.setState({ isLoading: true });
+    return request
+      .then(() => this.refetchData())
+      .then(() => toast.success(successMessage))
+      .finally(() => this.setState({ isLoading: false }));
+  };
+
   componentDidMount(): void {
     this.refetchData();
   }
 
   createDog = (dog: Omit<Dog, 'id'>) => {
-    this.setState({ isLoadig: true });
-    Requests.postDog(dog)
-      .then(() => this.refetchData())
-      .then(() => {
-        toast.success('You have created a dog!');
-      })
-      .finally(() => this.setState({ isLoading: false }));
+    this.handleRequest(Requests.postDog(dog), 'You have created a dog!');
   };
 
   deleteDog = (dog: Dog) => {
-    this.setState({ isLoading: true });
-    Requests.deleteDog(dog)
-      .then(() => this.refetchData())
-      .then(() => {
-        toast.success('You have deleted a dog!');
-      })
-      .finally(() => this.setState({ isLoading: false }));
+    this.handleRequest(Requests.deleteDog(dog), 'You have deleted a dog!');
   };
 
   updateDog = (dog: Pick<Dog, 'id' | 'isFavorite'>) => {
-    this.setState({ isLoading: true });
-    Requests.updateDog(dog)
-      .then(() => this.refetchData())
-      .then(() => {
-        dog.isFavorite
-          ? toast.success('You have liked a dog')
-          : toast.success('You have unliked a dog');
-      })
-      .finally(() => this.setState({ isLoading: false }));
+    this.handleRequest(
+      Requests.updateDog(dog),
+      dog.isFavorite ? 'You have liked a dog' : 'You have un-liked a dog'
+    );
   };
 
   render() {
