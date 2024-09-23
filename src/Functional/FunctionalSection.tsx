@@ -16,6 +16,13 @@ export const FunctionalSection = ({
   unfavorite: number;
   activeTab: string;  
 }) => {
+  const toggleTab = (tab: string) => {
+    if( activeTab === tab) {
+      setActiveTab(''); 
+    }else{
+      setActiveTab(tab); 
+    }
+  }
   return (
     <section id="main-section">
       <div className="container-header">
@@ -28,7 +35,7 @@ export const FunctionalSection = ({
           <div
             className={`selector ${activeTab === 'favorited' ? 'active' : '' }`}
             onClick={() => {
-              setActiveTab("favorited");
+              toggleTab("favorited")
             }}
           >
             favorited ( {favorite} )
@@ -38,7 +45,7 @@ export const FunctionalSection = ({
           <div
             className={`selector ${activeTab === 'unfavorited' ? 'active' : ''}`}
             onClick={() => {
-              setActiveTab("unfavorited");
+              toggleTab("unfavorited");
             }}
           >
             unfavorited ( {unfavorite} )
@@ -46,7 +53,7 @@ export const FunctionalSection = ({
           <div
             className={`selector ${activeTab === 'create' ? 'active' : ''}`}
             onClick={() => {
-              setActiveTab("create");
+              toggleTab("create");
             }}
           >
             create dog

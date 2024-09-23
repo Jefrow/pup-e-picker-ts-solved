@@ -11,8 +11,15 @@ type Props = {
 }
 
 export class ClassSection extends Component<Props> {
+  toggleTab = (tab: string) => {
+    if( this.props.activeTab === tab) {
+      this.props.setActiveTab(''); 
+    }else{
+      this.props.setActiveTab(tab); 
+    }
+  }
   render() {
-    const { favorited, unfavorited, children, activeTab, setActiveTab } =
+    const { favorited, unfavorited, children, activeTab} =
       this.props;
     return (
       <section id="main-section">
@@ -30,7 +37,7 @@ export class ClassSection extends Component<Props> {
                 activeTab === "favorited" ? "active" : ""
               } `}
               onClick={() => {
-                setActiveTab("favorited");
+                this.toggleTab("favorited");
               }}
             >
               favorited ({favorited})
@@ -42,7 +49,7 @@ export class ClassSection extends Component<Props> {
                 activeTab === "unfavorited" ? "active" : ""
               }`}
               onClick={() => {
-                setActiveTab("unfavorited");
+                this.toggleTab("unfavorited");
               }}
             >
               unfavorited ({unfavorited})
@@ -50,7 +57,7 @@ export class ClassSection extends Component<Props> {
             <div
               className={`selector ${activeTab === "create" ? "active" : ""} `}
               onClick={() => {
-                setActiveTab("create");
+                this.toggleTab("create");
               }}
             >
               create dog
