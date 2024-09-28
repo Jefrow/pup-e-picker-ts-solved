@@ -10,7 +10,6 @@ type Props = {
   updateDog: (dog: Pick<Dog, 'id' | 'isFavorite'>) => void;
 };
 
-// Right now these dogs are constant, but in reality we should be getting these from our server
 export class ClassDogs extends Component<Props> {
   filterDogs = (allDogs: Dog[], filter: string) => {
     return allDogs.filter((dog: Dog) => {

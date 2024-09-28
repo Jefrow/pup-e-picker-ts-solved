@@ -6,15 +6,6 @@ import { Dog } from '../types';
 import { Requests } from '../api';
 import { toast } from 'react-hot-toast';
 
-//Everything will live up here, from the fectch calls to the functions.
-//Fetch calls should exist here.
-/*
-  ✔️ToDo: Be able to delete a dog card (Delete Request). 
-  ✔️ToDo: Be able to favorite and unfavorite a dog. (Patch Request). 
-  ✔️ToDo: Refactor when everything is working so It follows SRP and Dry
-  ✔️ToDo: Be able to create the dogs in the functionalCreateDogForm. (Post Request).
-*/
-
 export function FunctionalApp() {
   const [allDogs, setAllDogs] = useState<Dog[]>([]);
   const [activeTab, setActiveTab] = useState('all');
@@ -41,7 +32,6 @@ export function FunctionalApp() {
     refetchData();
   }, []);
 
-  //Create dog function that will passed down to the Functional dog form.
   const createDog = (dog: Omit<Dog, 'id'>) => {
     handleRequest(Requests.postDog(dog), 'You have created a dog!');
   };
@@ -57,7 +47,6 @@ export function FunctionalApp() {
     );
   };
 
-  //filter the favorited vs the unfavorited dogs.
   const favorited = allDogs.filter((dog) => dog.isFavorite).length;
   const unFavorited = allDogs.length - favorited;
 

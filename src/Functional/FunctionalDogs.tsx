@@ -26,8 +26,6 @@ export const FunctionalDogs = ({
   });
 
   return (
-    //  the "<> </>"" are called react fragments, it's like adding all the html inside
-    // without adding an actual html element
     <>
       {filteredDogs.map((dog) => (
         <DogCard

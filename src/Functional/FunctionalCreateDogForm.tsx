@@ -2,7 +2,6 @@ import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
 
-// use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
 export const FunctionalCreateDogForm = ({
   createDog,
