@@ -102,14 +102,14 @@
       "name": "Evangeline",
       "image": "/assets/corgi.png",
       "description": "meh now against once inside mealy youthful harass",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 14
     },
     {
       "name": "Dayana",
       "image": "/assets/dalmation.png",
       "description": "furthermore knottily reception by sunflower faint navigate gee",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 15
     },
     {
@@ -123,7 +123,7 @@
       "name": "Emerson",
       "image": "/assets/boxer.png",
       "description": "retouching playfully alluvium among ultimately",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 17
     },
     {
@@ -153,6 +153,13 @@
       "description": "Cute aussie ",
       "isFavorite": true,
       "id": 21
+    },
+    {
+      "name": "Maggie",
+      "image": "/assets/blue-heeler.png",
+      "description": "cute dog",
+      "isFavorite": false,
+      "id": 22
     }
   ]
 }
