@@ -2,27 +2,25 @@
 
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { TactiveTab } from "../types";
 
 export const FunctionalSection = ({
   children,
   setActiveTab,
-  favorite, 
+  favorite,
   unfavorite,
-  activeTab, 
+  activeTab,
 }: {
-  setActiveTab: (tab: string) => void;
+  setActiveTab: (tab: TactiveTab) => void;
   children: ReactNode;
   favorite: number;
   unfavorite: number;
-  activeTab: string;  
+  activeTab: string;
 }) => {
-  const toggleTab = (tab: string) => {
-    if( activeTab === tab) {
-      setActiveTab(''); 
-    }else{
-      setActiveTab(tab); 
-    }
-  }
+  const toggleTab = (tab: TactiveTab) => {
+    const tabValue = activeTab === tab ? "all" : tab;
+    setActiveTab(tabValue);
+  };
   return (
     <section id="main-section">
       <div className="container-header">
@@ -32,16 +30,18 @@ export const FunctionalSection = ({
         </Link>
         <div className="selectors">
           <div
-            className={`selector ${activeTab === 'favorited' ? 'active' : '' }`}
+            className={`selector ${activeTab === "favorited" ? "active" : ""}`}
             onClick={() => {
-              toggleTab("favorited")
+              toggleTab("favorited");
             }}
           >
             favorited ( {favorite} )
           </div>
 
           <div
-            className={`selector ${activeTab === 'unfavorited' ? 'active' : ''}`}
+            className={`selector ${
+              activeTab === "unfavorited" ? "active" : ""
+            }`}
             onClick={() => {
               toggleTab("unfavorited");
             }}
@@ -49,7 +49,7 @@ export const FunctionalSection = ({
             unfavorited ( {unfavorite} )
           </div>
           <div
-            className={`selector ${activeTab === 'create' ? 'active' : ''}`}
+            className={`selector ${activeTab === "create" ? "active" : ""}`}
             onClick={() => {
               toggleTab("create");
             }}

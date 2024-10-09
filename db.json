@@ -18,28 +18,28 @@
       "name": "Agnes",
       "image": "/assets/chihuahua.avif",
       "description": "gadzooks suddenly gadzooks ruddy brave if given and",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 2
     },
     {
       "name": "Tad",
       "image": "/assets/boxer.png",
       "description": "midst pan abaft behind gesture",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 3
     },
     {
       "name": "Jaron",
       "image": "/assets/cowardly.png",
       "description": "tenderly wrap finally instead underneath",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 4
     },
     {
       "name": "Jackeline",
       "image": "/assets/blue-heeler.png",
       "description": "tenderly shred ugh afraid helpfully",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 5
     },
     {
@@ -53,7 +53,7 @@
       "name": "Cydney",
       "image": "/assets/cowardly.png",
       "description": "agreeable righteously triumphantly while yowza",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 7
     },
     {
@@ -67,21 +67,21 @@
       "name": "Rosalia",
       "image": "/assets/chihuahua.avif",
       "description": "cumbersome stonework far after strong abaft promptly",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 9
     },
     {
       "name": "Caroline",
       "image": "/assets/dalmation.png",
       "description": "lest cobble up shy pro tile monthly illustrate",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 10
     },
     {
       "name": "Turner",
       "image": "/assets/blue-heeler.png",
       "description": "harbour pounding out carefully eek inwardly duh",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 11
     },
     {
@@ -137,29 +137,8 @@
       "name": "Alan",
       "image": "/assets/dalmation.png",
       "description": "collude before over woefully testy why brr",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 19
-    },
-    {
-      "name": "bluey",
-      "image": "/assets/boxer.jpeg",
-      "description": "Cute doggo",
-      "isFavorite": false,
-      "id": 20
-    },
-    {
-      "name": "milly ",
-      "image": "/assets/boxer.jpeg",
-      "description": "Cute aussie ",
-      "isFavorite": true,
-      "id": 21
-    },
-    {
-      "name": "Maggie",
-      "image": "/assets/blue-heeler.png",
-      "description": "cute dog",
-      "isFavorite": false,
-      "id": 22
     }
   ]
 }
