@@ -18,14 +18,14 @@
       "name": "Agnes",
       "image": "/assets/chihuahua.avif",
       "description": "gadzooks suddenly gadzooks ruddy brave if given and",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 2
     },
     {
       "name": "Tad",
       "image": "/assets/boxer.png",
       "description": "midst pan abaft behind gesture",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 3
     },
     {
@@ -139,13 +139,6 @@
       "description": "collude before over woefully testy why brr",
       "isFavorite": false,
       "id": 19
-    },
-    {
-      "name": "Fiona",
-      "image": "/assets/boxer.jpeg",
-      "description": "Cute puppy ",
-      "isFavorite": false,
-      "id": 20
     }
   ]
 }

@@ -3,7 +3,6 @@ import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
 import { toast } from "react-hot-toast";
 
-// use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
 export const FunctionalCreateDogForm = ({
   createDog,

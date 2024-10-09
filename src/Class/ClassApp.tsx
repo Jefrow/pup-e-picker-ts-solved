@@ -85,8 +85,6 @@ export class ClassApp extends Component<State> {
             />
           )}
         </ClassSection>
-
-        {/* should be inside of the ClassSection component using react children */}
       </div>
     );
   }

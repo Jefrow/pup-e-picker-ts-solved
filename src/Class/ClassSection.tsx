@@ -31,7 +31,6 @@ export class ClassSection extends Component<Props> {
           </Link>
 
           <div className="selectors">
-            {/* This should display the favorited count */}
             <div
               className={`selector ${
                 activeTab === "favorited" ? "active" : ""
@@ -42,8 +41,6 @@ export class ClassSection extends Component<Props> {
             >
               favorited ({favorited})
             </div>
-
-            {/* This should display the unfavorited count */}
             <div
               className={`selector ${
                 activeTab === "unfavorited" ? "active" : ""
