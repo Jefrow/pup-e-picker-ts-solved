@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
+import { toast } from "react-hot-toast";
 
 // use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
@@ -8,15 +9,22 @@ export const FunctionalCreateDogForm = ({
   createDog,
   isLoading,
 }: {
-  createDog: (dog: Omit<Dog, "id">) => void;
+  createDog: (dog: Omit<Dog, "id">) => Promise<unknown>;
   isLoading: boolean;
 }) => {
   const [nameInput, setNameInput] = useState("");
   const [descriptionInput, setDescriptionInput] = useState("");
   const [imageInput, setImageInput] = useState(defaultSelectedImage);
-  const isValidName = (nameInput.length > 3); 
-  const isValidDescription = (descriptionInput.length > 3); 
-  const isValidDog = (isValidName && isValidDescription);  
+
+  const isValidName = nameInput.length > 3;
+  const isValidDescription = descriptionInput.length > 3;
+  const isValidDog = isValidName && isValidDescription;
+
+  const resetDogForm = () => {
+    setNameInput(""),
+      setDescriptionInput(""),
+      setImageInput(defaultSelectedImage);
+  };
 
   return (
     <form
@@ -30,7 +38,10 @@ export const FunctionalCreateDogForm = ({
           description: descriptionInput,
           isFavorite: false,
         })
-        setNameInput(""), setDescriptionInput(""), setImageInput(defaultSelectedImage);
+          .then(() => {
+            resetDogForm();
+          })
+          .catch(() => toast.error("there is no connection with the server"));
       }}
     >
       <h4>Create a New Dog</h4>
